@@ -35,6 +35,8 @@ class ViewController: UIViewController {
     }
     @IBAction func stopButtonTapped(_ sender: UIBarButtonItem) {
         
+        scrubberSlider.value = 0
+        
         timer.invalidate()
         
         player.pause()
@@ -42,7 +44,7 @@ class ViewController: UIViewController {
         do {
             
             try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
-                        
+            
         } catch {
             
             // process error
