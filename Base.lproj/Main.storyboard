@@ -48,7 +48,7 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xE6-2c-z9W">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mozart.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="xE6-2c-z9W">
                                 <frame key="frameInset" minX="67" minY="112" width="240" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -79,4 +79,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="135.38230884557723"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mozart.jpg" width="2079" height="3056"/>
+    </resources>
 </document>
