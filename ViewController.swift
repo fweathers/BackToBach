@@ -15,17 +15,27 @@ class ViewController: UIViewController {
     let audioPath = Bundle.main.path(forResource: "mozart", ofType: "mp3")
 
     @IBAction func playButtonTapped(_ sender: UIBarButtonItem) {
+        
+        player.play()
     }
     
     @IBAction func pauseButtonTapped(_ sender: UIBarButtonItem) {
+        
+        player.pause()
     }
     @IBAction func stopButtonTapped(_ sender: UIBarButtonItem) {
+        
+        player.stop()
     }
     
     @IBAction func volumeSliderMoved(_ sender: UISlider) {
+        
+        player.volume = volumeSlider.value
     }
     
     @IBAction func scrubberSliderMoved(_ sender: UISlider) {
+        
+        player.currentTime = TimeInterval(scrubberSlider.value)
     }
     
     @IBOutlet weak var scrubberSlider: UISlider!
@@ -37,6 +47,8 @@ class ViewController: UIViewController {
         do {
             
             try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
+            
+            scrubberSlider.maximumValue = Float(player.duration)
             
         } catch {
             
