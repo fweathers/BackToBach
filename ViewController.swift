@@ -9,10 +9,38 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var player = AVAudioPlayer()
+    let audioPath = Bundle.main.path(forResource: "mozart", ofType: "mp3")
 
+    @IBAction func playButtonTapped(_ sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func pauseButtonTapped(_ sender: UIBarButtonItem) {
+    }
+    @IBAction func stopButtonTapped(_ sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func volumeSliderMoved(_ sender: UISlider) {
+    }
+    
+    @IBAction func scrubberSliderMoved(_ sender: UISlider) {
+    }
+    
+    @IBOutlet weak var scrubberSlider: UISlider!
+
+    @IBOutlet weak var volumeSlider: UISlider!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        do {
+            
+            try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
+            
+        } catch {
+            
+            // process error
+        }
     }
 
     override func didReceiveMemoryWarning() {
